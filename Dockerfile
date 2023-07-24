@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN pip install -r requirements.txt
+RUN pip install streamlit pandas mysql-connector-python
 
 EXPOSE 8501
 
