@@ -1,7 +1,6 @@
 # app/Dockerfile
 
-FROM python:3.9
-RUN pip install --upgrade pip
+FROM python:3.9-slim
 
 WORKDIR /app
 
@@ -14,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 
 
 RUN pip install streamlit pandas mysql-connector-python
+
+COPY dashboard.py .
 
 EXPOSE 8501
 
