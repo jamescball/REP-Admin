@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN pip install streamlit pandas mysql-connector-python
+RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
 COPY dashboard.py .
 
