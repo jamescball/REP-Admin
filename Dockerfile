@@ -15,6 +15,8 @@ RUN git clone https://github.com/jamescball/REP-Admin.git
 # Change the working directory to /app/REP-Admin
 WORKDIR /app/REP-Admin
 
+RUN ls
+
 RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
 EXPOSE 8501
