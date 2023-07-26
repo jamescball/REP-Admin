@@ -9,14 +9,13 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install streamlit pandas mysql-connector-python python-dotenv
-
-# Clone the public repository
+# Clone the repository into /app/REP-Admin
 RUN git clone https://github.com/jamescball/REP-Admin.git
 
-# If you need files from the repository in your /app directory, you can copy them
-# COPY REP-Admin/some-file .
-COPY REP-Admin/* ./
+# Change the working directory to /app/REP-Admin
+WORKDIR /app/REP-Admin
+
+RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
 EXPOSE 8501
 
