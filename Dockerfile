@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN pip install streamlit pandas mysql-connector-python python-dotenv pdfplumber
+RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
-COPY * $HOME/app/
-RUN ls -la /
+COPY Dashboard.py .
+COPY /pages/ ./
 
 EXPOSE 8501
 
