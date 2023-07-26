@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/jamescball/REP-Admin.git .
 
 RUN pip install streamlit pandas mysql-connector-python python-dotenv pdfplumber
+RUN pip3 install streamlit pandas mysql-connector-python python-dotenv pdfplumber
 
 EXPOSE 8501
 
