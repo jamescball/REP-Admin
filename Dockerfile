@@ -1,5 +1,3 @@
-# app/Dockerfile
-
 FROM python:3.9-slim
 
 WORKDIR /app
@@ -11,11 +9,13 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-
 RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
-COPY Dashboard.py .
-COPY /pages/ ./
+# Clone the public repository
+RUN git clone https://github.com/jamescball/REP-Admin.git
+
+# If you need files from the repository in your /app directory, you can copy them
+# COPY REP-Admin/some-file .
 
 EXPOSE 8501
 
