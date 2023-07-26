@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install streamlit pandas mysql-connector-python python-dotenv pdfplumber
 
-COPY ./* $HOME/app/
+COPY ./ $HOME/app/
+RUN ls -la /
 
 EXPOSE 8501
 
