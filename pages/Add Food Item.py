@@ -67,18 +67,8 @@ def get_restaurant_locations():
     return locations
 
 def main():
-    st.title('Food Item Dashboard')
+    st.title('Add Food Item')
 
-    # Display statistics
-    col1, col2, col3, col4 = st.columns(4)
-    total_food_items, total_restaurants, verified_food_items, third_party_food_items = get_stats()
-    col1.metric('Total Food Items:', total_food_items, delta=None, delta_color="normal", help=None, label_visibility="visible")
-    col2.metric('Total Restaurants:', total_restaurants, delta=None, delta_color="normal", help=None, label_visibility="visible")
-    col3.metric('Verified Food Items:', verified_food_items, delta=None, delta_color="normal", help=None, label_visibility="visible")
-    col4.metric('3rd Party Food Items:', third_party_food_items, delta=None, delta_color="normal", help=None, label_visibility="visible")
-
-    # Form to add a new food item
-    st.header('Add Food Item')
     name = st.text_input('Name')
 
     # Autocomplete text input for the "Location" field
