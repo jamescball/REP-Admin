@@ -16,6 +16,7 @@ RUN git clone https://github.com/jamescball/REP-Admin.git
 
 # If you need files from the repository in your /app directory, you can copy them
 # COPY REP-Admin/some-file .
+COPY REP-Admin/* .
 
 EXPOSE 8501
 
