@@ -1,3 +1,5 @@
+# app/Dockerfile
+
 FROM python:3.9-slim
 
 WORKDIR /app
@@ -9,13 +11,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Clone the repository into /app/REP-Admin
-RUN git clone https://github.com/jamescball/REP-Admin.git
-
-# Change the working directory to /app/REP-Admin
-WORKDIR /app/REP-Admin
-
-RUN ls
+RUN git clone https://github.com/jamescball/REP-Admin.git .
 
 RUN pip install streamlit pandas mysql-connector-python python-dotenv
 
